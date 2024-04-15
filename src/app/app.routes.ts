@@ -1,17 +1,22 @@
 import { Routes } from '@angular/router';
-import { CollectionsHomeComponent } from './collections/collections-home/collections-home.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
   {
-    path: '',
+    path: 'elements',
     loadChildren: () =>
       import('./elements/elements-routing.module').then(
         (m) => m.ElementsRoutingModule
       ),
   },
-  { path: 'collections', component: CollectionsHomeComponent },
+  {
+    path: 'collections',
+    loadChildren: () =>
+      import('./collections/collections-routing.module').then(
+        (m) => m.CollectionsRoutingModule
+      ),
+  },
+  { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent },
 ];
