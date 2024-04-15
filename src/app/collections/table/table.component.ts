@@ -9,6 +9,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './table.component.css',
 })
 export class TableComponent {
+  @Input('class') classNames = '';
+
   @Input() data: any[] = [];
   @Input() headers: { key: string; label: string }[] = [];
 }
