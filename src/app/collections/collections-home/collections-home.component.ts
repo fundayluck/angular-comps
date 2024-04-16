@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TableComponent } from '../table/table.component';
 import { DividerComponent } from '../../shared/divider/divider.component';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { TabsComponent } from '../tabs/tabs.component';
 
 @Component({
   selector: 'app-collections-home',
@@ -12,6 +13,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
     RouterLinkActive,
     DividerComponent,
     TableComponent,
+    TabsComponent,
   ],
   templateUrl: './collections-home.component.html',
   styleUrl: './collections-home.component.css',
