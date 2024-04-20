@@ -17,6 +17,11 @@ export const routes: Routes = [
         (m) => m.CollectionsRoutingModule
       ),
   },
+  {
+    path: 'views',
+    loadChildren: () =>
+      import('./views/views-routing.module').then((m) => m.ViewsRoutingModule),
+  },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent },
 ];
