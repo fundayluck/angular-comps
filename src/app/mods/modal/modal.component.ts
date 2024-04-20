@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -9,6 +9,8 @@ import { Component, ElementRef } from '@angular/core';
   styleUrl: './modal.component.css',
 })
 export class ModalComponent {
+  @Output() close = new EventEmitter();
+
   constructor(private el: ElementRef) {}
 
   ngOnInit() {
@@ -17,5 +19,9 @@ export class ModalComponent {
 
   ngOnDestroy() {
     this.el.nativeElement.remove();
+  }
+
+  onCloseClick() {
+    this.close.emit();
   }
 }
